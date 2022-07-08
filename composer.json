@@ -1,0 +1,40 @@
+{
+    "name": "ae-studio/aengine",
+    "description": "CMF AEngine",
+    "authors": [
+        {
+            "name": "Анатолий Шевелев",
+            "email": "shevelev@web-ae.ru"
+        }
+    ],
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.4.0",
+        "ext-ctype": "*",
+        "ext-exif": "*",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-mysqli": "*",
+        "ext-zip": "*",
+
+        "dapphp/securimage": "^3.6.8",
+        "firephp/firephp-core": "^0.5.3",
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "mrclay/minify": "~3.0",
+        "nesbot/carbon": "^2.54",
+        "phpmailer/phpmailer": "^6.6",
+        "phpseclib/phpseclib": "~3.0.13",
+        "smarty/smarty": "~4.1"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "suggest": {
+      "ext-fileinfo": "The functions in this module try to guess the content type and encoding of a file",
+      "ext-gmagick": "Extension to create, modify and obtain meta information of images using the GraphicsMagick API",
+      "ext-xmlreader": "XML Pull parser",
+      "ext-xmlwriter": "It wraps the libxml xmlWriter API",
+      "ext-zlib": "This extension enables you to transparently read and write gzip compressed files"
+    }
+}

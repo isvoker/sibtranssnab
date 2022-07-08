@@ -1,0 +1,141 @@
+.control-btns{display:flex}
+.control-btn {
+	background: url("/img/inner/icons.png") 0 0 no-repeat;
+	border: 0;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	width: 16px;
+	height: 16px
+}
+.control-btn:not(:first-child) {
+	margin-left: 4px
+}
+.control-btn:not(:focus):not(:hover):not(:active) {
+	opacity: .6
+}
+.control-btn_add{background-position:0 0}
+.control-btn_delete{background-position:-64px 0}
+.control-btn_refresh{background-position:-112px 0}
+.control-btn_edit{background-position:-128px 0}
+.control-btn_down{background-position:-32px -16px}
+.control-btn_up{background-position:-48px -16px}
+.control-btn_down-right{background-position:-64px -16px}
+.control-btn_play{background-position:-128px -16px}
+
+.sensei-btn,
+.sensei-ico {
+	align-items: center;
+	cursor: pointer;
+	display: -webkit-inline-flex;
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+	text-decoration: none
+}
+.sensei-ico::before {
+	background: url("/img/inner/icons.png") 0 0 no-repeat;
+	content: '';
+	margin-right: .25em;
+	transform-origin: 0 0;
+	width: 16px;
+	height: 16px
+}
+.sensei-ico_add::before{background-position:0 0}
+.sensei-ico_remove::before{background-position:-16px 0}
+.sensei-ico_apply::before{background-position:-32px 0}
+.sensei-ico_cancel::before{background-position:-48px 0}
+.sensei-ico_delete::before{background-position:-64px 0}
+.sensei-ico_undo::before{background-position:-80px 0}
+.sensei-ico_redo::before{background-position:-96px 0}
+.sensei-ico_reload::before{background-position:-112px 0}
+.sensei-ico_edit::before{background-position:-128px 0}
+
+.sensei-ico_right::before{background-position:0 -16px}
+.sensei-ico_left::before{background-position:-16px -16px}
+.sensei-ico_down::before{background-position:-32px -16px}
+.sensei-ico_up::before{background-position:-48px -16px}
+.sensei-ico_down-right::before{background-position:-64px -16px}
+.sensei-ico_down-left::before{background-position:-80px -16px}
+.sensei-ico_up-right::before{background-position:-96px -16px}
+.sensei-ico_up-left::before{background-position:-112px -16px}
+.sensei-ico_play::before{background-position:-128px -16px}
+
+.sensei-ico_save::before{background-position:0 -32px}
+.sensei-ico_options::before{background-position:-16px -32px}
+.sensei-ico_search::before{background-position:-32px -32px}
+.sensei-ico_filter::before{background-position:-48px -32px}
+.sensei-ico_db::before{background-position:-64px -32px}
+.sensei-ico_folder::before{background-position:-80px -32px}
+.sensei-ico_document::before{background-position:-96px -32px}
+.sensei-ico_list::before{background-position:-112px -32px}
+.sensei-ico_book::before{background-position:-128px -32px}
+
+.sensei-ico_print::before{background-position:0 -48px}
+.sensei-ico_letter::before{background-position:-16px -48px}
+.sensei-ico_calendar::before{background-position:-32px -48px}
+.sensei-ico_clock::before{background-position:-48px -48px}
+.sensei-ico_history::before{background-position:-64px -48px}
+.sensei-ico_error::before{background-position:-80px -48px}
+.sensei-ico_warning::before{background-position:-96px -48px}
+.sensei-ico_key::before{background-position:-112px -48px}
+.sensei-ico_groups::before{background-position:-128px -48px}
+
+.sensei-btn {
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0 6px 6px -8px rgba(0, 0, 0, .3);
+	box-sizing: content-box;
+	font-family: inherit;
+	line-height: 1em;
+	margin-bottom: .5rem;
+	outline: 0;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3)
+}
+.sensei-btn:not(:last-child) {
+	margin-right: .5rem
+}
+.sensei-btn:active{top:1px}
+.sensei-btn_xl {
+	font-size: 1rem;
+	padding: .6em 2em
+}
+.sensei-btn_m {
+	font-size: .875rem;
+	padding: .4em 1.6em
+}
+.sensei-btn_s {
+	font-size: .75rem;
+	padding: .2em 1.2em
+}
+
+.sensei-btn.sensei-ico {
+	padding-right: 1em;
+	padding-left: 1em
+}
+.sensei-btn.sensei-ico::before {
+	margin-right: .5em
+}
+.sensei-btn_m.sensei-ico::before {
+	transform: scale(.875)
+}
+.sensei-btn_s.sensei-ico::before {
+	transform: scale(.8);
+	width: 15px;
+	height: 15px
+}
+
+.sensei-btn_white{background-color:#FFF;border-color: #adadad;color: #000}
+.sensei-btn_white:hover{background-color: #eee}
+.sensei-btn_white:active{background-color:#CCC;color:#000}
+.sensei-btn_red{background-color:#CC181E;background-image:linear-gradient(0deg,#AA1317,#ED1C24);border-color:#980C10;color:#FADDDE}
+.sensei-btn_red:hover{background-color:#B51318;background-image:linear-gradient(0deg,#A11115,#C9151B)}
+.sensei-btn_red:active{background-color:#CC181E;background-image:linear-gradient(0deg,#ED1C24,#AA1317);color:#DE898C}
+.sensei-btn_blue{background-color: #2593dc;border-color: #006271;color: #FFF}
+.sensei-btn_blue:hover{background-color: #005caa}
+.sensei-btn_blue:active{background-color:#142B43;color:#80BED6}
+.sensei-btn_green{background-color: #528608;border-color: #106300;color: #FFF}
+.sensei-btn_green:hover{background-color: #106300
+}
+.sensei-btn_green:active{background-color: #194314;color: #FFF}

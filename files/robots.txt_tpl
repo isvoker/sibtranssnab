@@ -1,0 +1,14 @@
+User-agent: Yandex
+Disallow: /addons/
+Disallow: /captcha.php
+{DISALLOW}
+{CUSTOM_CONTENT}
+{SITEMAP}
+{HOST}
+
+User-agent: *
+Disallow: /addons/
+Disallow: /captcha.php
+{DISALLOW}
+{CUSTOM_CONTENT}
+{SITEMAP}

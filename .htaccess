@@ -1,0 +1,110 @@
+# ######################################################################
+# Custom error pages
+# ######################################################################
+
+ErrorDocument 403 /app/view/error_pages/403.html
+ErrorDocument 404 /app/view/error_pages/404.html
+ErrorDocument 500 /app/view/error_pages/500.html
+ErrorDocument 503 /app/view/error_pages/503.html
+
+# ######################################################################
+# Rewrites
+# ######################################################################
+
+RewriteEngine On
+RewriteBase /
+
+# ----------------------------------------------------------------------
+# Set %{ENV:PROTO} variable, to allow rewrites to redirect with the
+# appropriate schema automatically
+# ----------------------------------------------------------------------
+RewriteCond %{HTTPS} =on
+RewriteRule ^ - [env=proto:https]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ - [env=proto:http]
+
+# ----------------------------------------------------------------------
+# Suppressing / Forcing the `www.` at the beginning of URLs
+# ----------------------------------------------------------------------
+# Option 1: rewrite www to non-www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+
+# Option 2: rewrite non-www to www
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ----------------------------------------------------------------------
+# Stop 404 Requests from iOS, IE 11+
+# ----------------------------------------------------------------------
+RewriteRule (.*)apple-touch-icon(.*)\.png$ - [R=404,L]
+RewriteRule ^browserconfig\.xml$ - [R=404,L]
+
+# ----------------------------------------------------------------------
+# Prevent search indexing on domain *.web-ae.ru
+# ----------------------------------------------------------------------
+RewriteCond %{HTTP_HOST} ^.*\.web-ae\.ru$
+RewriteRule ^robots\.txt$ files/robots.txt_noindex [L]
+
+# ######################################################################
+# Security
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# Prevent hotlinking
+# ----------------------------------------------------------------------
+RewriteCond %{HTTP_HOST}==%{HTTP_REFERER} !^(.*?)==https?://\1/
+RewriteRule \.(gif|png|jp(e?g|2)?|bmp|svg)$ - [F]
+RewriteRule ^files/([^/]+/)*([^/.]+\.)+(js|css)$ - [F]
+
+# ----------------------------------------------------------------------
+# Block unneeded HTTP methods
+# ----------------------------------------------------------------------
+RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|TRACK|DELETE|OPTIONS) [NC]
+RewriteRule .* - [F]
+
+# ----------------------------------------------------------------------
+# File injection protection
+# ----------------------------------------------------------------------
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(http|https|ftp):// [OR]
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC]
+RewriteRule .* - [F]
+
+# ----------------------------------------------------------------------
+# Disallow PHP Easter Eggs. See https://www.0php.com/php_easter_egg.php
+# ----------------------------------------------------------------------
+RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC]
+RewriteRule .* - [F]
+
+# ######################################################################
+# Specific rules for CMF AEngine
+# ######################################################################
+
+# Disallow access to any file or folder in root directory that starts with a dot
+RewriteRule ^\. - [F,L]
+
+# Redirect to robots.txt and sitemap.xml(.gz)
+RewriteCond %{HTTP_HOST} ^(m\.)?(.+)$ [NC]
+RewriteRule ^(robots|sitemap)\.(txt|xml(?:\.gz)?)$ files/$1.%1$2 [L]
+
+# Direct access to static resources
+RewriteRule ^favicon\.ico$ files/incoming/images/favicon.ico [L]
+RewriteRule ^((fonts|img)/.+)$ static/$1 [L]
+RewriteRule ^(static/.+)\.v[\d]{8}[\da-f](\.[a-z\d]+)$ $1$2 [L]
+RewriteRule ^(static|modules)/.+$ - [L]
+RewriteRule ^(addons|files|min|rss)/.* - [L]
+RewriteRule ^ajax/$ xhr.php [L]
+RewriteRule ^(captcha|xhr)\.php$ - [L]
+
+# Redirect from domain/path to domain/path/
+RewriteCond %{REQUEST_FILENAME} !index.php
+RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
+
+# Specific rules for module "YandexTurbo"
+RewriteRule ^yandex-turbo\.rss /modules/YandexTurbo/Controller.php [L]
+RewriteRule ^modules/YandexTurbo/Controller\.php$ - [L]
+
+# Redirect all other to index.php
+RewriteRule ^.*$ index.php

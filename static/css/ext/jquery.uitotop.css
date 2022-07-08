@@ -1,0 +1,30 @@
+#toTop {
+	background-color: #FFF;
+	border-radius: 4px;
+	bottom: 53px;
+	box-shadow: 0 0 3px #333;
+	display: block;
+	height: 42px;
+	opacity: 0.7;
+	position: fixed;
+	right: 20px;
+	transition:opacity .3s linear, transform .3s linear;
+	width: 42px;
+	z-index: 100;
+}
+#toTop::after {
+	border: 3px solid #444;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	content: '';
+	height: 10px;
+	left: 50%;
+	position: absolute;
+	top: 17px;
+	transform: translateX(-50%) rotate(45deg);
+	width: 10px;
+}
+#toTop:not(.active){opacity:0; transform:scale(0)}
+#toTop:focus,
+#toTop:hover,
+#toTop:active{opacity:1}

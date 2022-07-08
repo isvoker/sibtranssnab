@@ -1,0 +1,119 @@
+.jGrowl{
+	color:#FFF;
+	font:400 16px "Trebuchet MS","Helvetica CY",sans-serif;
+	position:fixed;
+	z-index:9999
+}
+.jGrowl.top-left{
+	left:0;top:0
+}
+.jGrowl.top-right{
+	right:0;top:0
+}
+.jGrowl.bottom-left{
+	left:0;bottom:0
+}
+.jGrowl.bottom-right{
+	right:0;bottom:0
+}
+.jGrowl.center{
+	left:50%;top:0;
+	-webkit-transform:translateX(-50%);
+	   -moz-transform:translateX(-50%);
+			transform:translateX(-50%);
+	width:50%
+}
+.jGrowl.center .jGrowl-notification,
+.jGrowl.center .jGrowl-closer{
+	margin-right:auto;
+	margin-left:auto
+}
+.jGrowl-notification,
+.jGrowl-closer{
+	background-color:#000;
+	border-radius:8px;
+	-webkit-box-shadow:0 0 5px 2px #0CF;
+			box-shadow:0 0 5px 2px #0CF;
+	box-sizing: border-box;
+	display:none;
+	margin:10px;
+	opacity:.85;
+	word-wrap:break-word;
+	width:350px
+}
+.jGrowl-notification{
+	padding:10px;
+	text-align:left
+}
+.jGrowl-notification .ui-state-highlight,
+.jGrowl-notification .ui-widget-content .ui-state-highlight,
+.jGrowl-notification .ui-widget-header .ui-state-highlight{
+	background:#000;
+	border:1px solid #000;
+	color:#FFF
+}
+.jGrowl-notification .jGrowl-header{
+	font-weight:700;
+	font-size:.85em
+}
+.jGrowl-notification .jGrowl-close{
+	background-color:transparent;
+	border:none;
+	color:inherit;
+	cursor:pointer;
+	float:right;
+	font-weight:700;
+	font-size:1em;
+	z-index:99
+}
+.jGrowl-closer{
+	cursor:pointer;
+	font-weight:700;
+	font-size:.9em;
+	padding:4px 10px 4px 10px;
+	text-align:center
+}
+.jGrowl-closer .ui-state-highlight,
+.jGrowl-closer .ui-widget-content .ui-state-highlight,
+.jGrowl-closer .ui-widget-header .ui-state-highlight{
+	background:#000;
+	border:1px solid #000;
+	color:#FFF
+}
+/** Hide jGrowl when printing **/
+@media print{
+	.jGrowl{
+		display:none
+	}
+}
+.jGrowl-error{
+	color:#F00;
+	font-weight:700
+}
+.jGrowl .jGrowl-error .jGrowl-header{
+	font-size:1.2em
+}
+
+/** for mobile device **/
+@media (max-width: 768px) {
+	.jGrowl{
+		margin: 0 10px;
+	}
+	.jGrowl.top-left{
+		left:0;right:0;top:0;
+	}
+	.jGrowl.top-right{
+		left:0;right:0;top:0;
+	}
+	.jGrowl.bottom-left{
+		left:0;bottom:0;right:0
+	}
+	.jGrowl.bottom-right{
+		left:0;bottom:0;right:0
+	}
+	.jGrowl-notification,
+	.jGrowl-closer{
+		margin: 10px 0;
+		max-width: 100%;
+	}
+}

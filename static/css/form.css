@@ -1,0 +1,345 @@
+.sensei-form {
+    box-sizing: border-box;
+    margin: 0 0 1.5rem;
+    text-align: left
+}
+.sensei-form_small {
+    margin: 1.5rem auto;
+    max-width: 600px
+}
+.sensei-form *,
+.sensei-form *::before,
+.sensei-form *::after {
+    box-sizing: inherit;
+}
+.sensei-form > .row {
+    border-bottom: 1px dashed #859599;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: .75rem .5rem;
+    max-width: 1280px
+}
+.sensei-form .label,
+.sensei-form .input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: .875rem;
+    overflow: hidden;
+    height: 100%
+}
+.sensei-form .label {
+    font-size: 1.125rem;
+    color: #000;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphenate-limit-chars: 6 3 2;
+    hyphens: auto
+}
+.sensei-form .input {
+    min-height: 1rem
+}
+.sensei-form .input label {
+    display: block;
+    margin-top: .375rem
+}
+.sensei-form .input label:first-child {
+    margin-top: 0
+}
+
+.sensei-form .marked::after {
+    color: #0CF;
+    content: "*";
+    margin-left: 4px
+}
+.sensei-form .disabled,
+.sensei-form *:disabled {
+    cursor: not-allowed !important
+}
+
+.sensei-form .input_textarea {
+    height: 120px;
+	max-height: 300px;
+	min-height: 70px;
+	resize: vertical;
+}
+.sensei-form .input_auto {
+    width: auto
+}
+.sensei-form .input_select,
+.sensei-toolbar .input_select {
+    outline: none;
+    padding-left: 1%;
+    width: 100%;
+    height: 1.5rem
+}
+.sensei-form .sensei-simple-table .input_select:not(.dic_select) {
+    width: 100px !important
+}
+.sensei-form .input_select[size] {
+    height: auto
+}
+.sensei-form .input_select.multiple {
+    height: 5rem
+}
+.sensei-form .input_select.multiple > .default {
+    color: #298CEF
+}
+.sensei-form .input label > input {
+    margin-right: 4px;
+    vertical-align: text-top
+}
+.sensei-form .input_text,
+.sensei-form .input_textarea,
+.sensei-form .input_select,
+.sensei-toolbar .input_text,
+.sensei-toolbar .input_textarea,
+.sensei-toolbar .input_select,
+.sensei-form .ft_readonly {
+    background-color: #f1faff;
+    border: 1px solid #c2c2c2;
+    color: #000;
+    font: 400 .875rem/1.25rem "Courier New", Courier, monospace;
+    overflow-wrap: break-word;
+    word-break: break-word
+}
+.sensei-form .input_text:focus,
+.sensei-form .input_textarea:focus,
+.sensei-form .input_select:focus,
+.sensei-toolbar .input_text:focus,
+.sensei-toolbar .input_textarea:focus,
+.sensei-toolbar .input_select:focus,
+.sensei-form .textbox-focused {
+    background-color: transparent;
+    border-color: #18B3E0;
+    box-shadow: none;
+    outline: none
+}
+.sensei-form input.text-note {
+    color: #5AF
+}
+.sensei-form .input_text,
+.sensei-form .input_textarea,
+.sensei-form .ft_readonly,
+.sensei-toolbar .input_text,
+.sensei-toolbar .input_textarea {
+    padding: .25rem 1%;
+    width: 100%
+}
+
+.sensei-form .input_text.twosome {
+    width: 40%
+}
+.sensei-form .input_text.twosome:first-child {
+    margin-right: 6px
+}
+.sensei-form .input_text.twosome:not(:first-child) {
+    margin-left: 6px
+}
+
+.sensei-form .sensei-form-table .input_text,
+.sensei-form .sensei-form-table .input_textarea {
+    width: 220px
+}
+
+.sensei-form .ft_readonly {
+    background-color: transparent;
+    min-height: 1.5rem
+}
+
+.sensei-form .input_checkbox,
+.sensei-form .input_radio {
+    position: absolute;
+    opacity: 0
+}
+.sensei-form .input_checkbox + label,
+.sensei-form .input_radio + label {
+    display: inline-block;
+    line-height: 1.125rem;
+    margin: 0;
+    padding-left: 1.75rem;
+    position: relative;
+    min-height: 1.25rem
+}
+.sensei-form .input_checkbox + label:not(:last-child),
+.sensei-form .input_radio + label:not(:last-child) {
+    margin-right: 1.25rem
+}
+.sensei-form .input_checkbox + label::before,
+.sensei-form .input_radio + label::before {
+    border: 1px solid #0CF;
+    color: transparent;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 1.125rem; height: 1.125rem
+}
+.sensei-form .input_checkbox + label:hover::before,
+.sensei-form .input_radio + label:hover::before {
+    border: 1px solid #298CEF
+}
+.sensei-form .input_checkbox + label.disabled::before,
+.sensei-form .input_radio + label.disabled::before {
+    background-color: #047
+}
+.sensei-form .input_checkbox:checked + label::before,
+.sensei-form .input_radio:checked + label::before{
+    color: #0CF
+}
+.sensei-form .input_checkbox:focus + label::before,
+.sensei-form .input_radio:focus + label::before {
+    box-shadow: inset 0 0 2px 1px rgba(0, 204, 255, .6)
+}
+.sensei-form .input_checkbox + label::before {
+    content: "\2713";
+    font-size: 1rem;
+    line-height: 1rem
+}
+.sensei-form .input_radio + label::before {
+    border-radius: 50%;
+    content: "\2022";
+    font-size: 1.875rem;
+    line-height: .625rem
+}
+
+.sensei-form .cke {
+    color: #000
+}
+.sensei-form .textbox,
+.sensei-form .textbox .textbox-text {
+    border-radius: 0
+}
+.sensei-form .textbox .textbox-text {
+    background-color: transparent
+}
+
+.sensei-form_vertical .label {
+    margin-bottom: .5rem
+}
+.sensei-form_vertical .input_text,
+.sensei-form_vertical .input_textarea,
+.sensei-form_vertical .input_select {
+    margin-bottom: .25rem
+}
+.sensei-form_vertical .ft_date,
+.sensei-form_vertical .ft_time {
+    text-align: center;
+    width: 180px !important
+}
+.sensei-form_vertical .ft_datetime {
+    text-align: center;
+    width: 200px !important
+}
+
+@media (min-width: 600px) {
+    .sensei-form_horizontal .label,
+    .sensei-form_horizontal .input {
+        display: inline-block;
+        vertical-align: top
+    }
+
+    .sensei-form_horizontal .label {
+        margin-right: 2%;
+        width: 28%
+    }
+
+    .sensei-form_horizontal .input {
+        width: 70%
+    }
+    .sensei-form_horizontal .input:not(.sensei-buttons) .sensei-btn {
+        margin-top: .25rem
+    }
+}
+@media (max-width: 599px) {
+    .sensei-form_horizontal .label + .input {
+        margin-top: .5rem
+    }
+    .sensei-form_horizontal .input_text,
+    .sensei-form_horizontal .input_textarea,
+    .sensei-form_horizontal .input_select {
+        margin-bottom: .25rem
+    }
+    .sensei-form_horizontal .ft_date,
+    .sensei-form_horizontal .ft_time {
+        text-align: center;
+        width: 150px !important
+    }
+    .sensei-form_horizontal .ft_datetime {
+        text-align: center;
+        width: 200px !important
+    }
+}
+
+.sensei-form-table {
+    overflow: auto !important;
+    text-align: left
+}
+.datagrid-row-detail .sensei-form-table {
+    margin: .625rem 0
+}
+.sensei-form-table th,
+.sensei-form-table td {
+    font-size: .875rem;
+    padding: .25rem .375rem
+}
+.sensei-form-table th,
+.sensei-form-table tbody td {
+    border-color: #a0d9e2;
+    border-style: solid;
+    border-width: 0 1px 1px 0
+}
+.sensei-form-table th:last-child,
+.sensei-form-table tbody td:last-child {
+    border-right-width: 0
+}
+.sensei-form-table tbody > tr:last-child > * {
+    border-bottom-width: 0
+}
+.sensei-form-table th {
+    color: #393939;
+    font-weight: 700
+}
+.sensei-form-table thead > tr > * {
+    text-align: center
+}
+.sensei-form-table td {
+    vertical-align: top
+}
+.sensei-form-table td > * {
+    vertical-align: middle
+}
+
+.sensei-toolbar {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding: .5rem 0
+}
+.sensei-toolbar__control {
+    display: flex;
+    align-items: center;
+    margin-bottom: .375rem
+}
+.sensei-toolbar__control:not(:last-child) {
+    margin-right: 1.5rem
+}
+.sensei-toolbar__label {
+    margin-right: .5rem;
+    white-space: nowrap
+}
+
+.sensei-form .captcha_refresh {
+    cursor: pointer;
+    display: block;
+    margin: 0 0 .25rem
+}
+.sensei-form .input_text.input_captcha {
+    width: 220px !important
+}
+
+.sensei-form_need-validation .input-right {
+    box-shadow: inset 0 0 0 1px #3F3, inset 0 0 4px 2px rgba(51, 255, 51, .6) !important
+}
+.sensei-form_need-validation .input-wrong {
+    box-shadow: inset 0 0 0 1px #F33, inset 0 0 4px 2px rgba(255, 51, 51, .6) !important
+}

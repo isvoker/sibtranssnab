@@ -1,0 +1,28 @@
+<?php
+
+require __DIR__ . DIRECTORY_SEPARATOR . 'CfgSecret.php';
+
+/**
+ * Custom configuration for a specific execution environment.
+ */
+class Cfg extends CfgSecret
+{
+	/* sample for development */
+	//public const DEBUG_IS_ON = true;
+	//public const JS_ERRORS_LOGGING_IS_ON = false;
+	//public const GUARD_IS_ON = false;
+	//public const HISTORY_IS_ON = false;
+
+	/* sample for production */
+	//public const HISTORY_IS_ON = true;
+	//public const MINIFY_IS_ON = true;
+
+    /* if you use SMTP */
+    //public const MAILER = 'smtp';
+    //public const MAILER_SMTP_HOST = 'smtp.example.com';
+    //public const MAILER_SMTP_ENCRYPTION = 'tls';
+    //public const MAILER_SMTP_PORT = 587;
+    //public const MAILER_SMTP_AUTH = true;
+    //public const MAILER_SMTP_USER = 'user@example.com';
+    //public const MAILER_SMTP_PASSWORD = '*****';
+}

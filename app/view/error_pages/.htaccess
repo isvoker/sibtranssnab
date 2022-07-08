@@ -1,0 +1,7 @@
+RewriteEngine Off
+
+Require all granted
+
+<IfModule mod_headers.c>
+    Header Set Cache-Control "max-age=0, no-store"
+</IfModule>

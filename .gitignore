@@ -1,0 +1,14 @@
+/app/cache/*
+/app/config/CfgSecret.php
+/app/config/Cfg.php
+/backups/*
+/files/cache/*
+/files/incoming/*
+/files/sitemap.*
+/files/*.txt
+/min/cache/*
+/vendor/
+*_thumbs/
+*.log
+*.bak
+!.gitkeep

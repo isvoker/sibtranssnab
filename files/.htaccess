@@ -1,0 +1,14 @@
+Options -Indexes -Multiviews -Includes
+
+<Files ~ "\.(aspx?|f?cgi|exe|jsp|s?x?htm?l?(\..+)?|pht|phps?\d?|f?pl|rdf|svgz?|wml|xml|xsl)$">
+    RemoveHandler .asp .aspx .cgi .fcgi .exe .htm .html .shtm .shtml .phtml .pht .php .phps .php3 .php4 .php5 .php6 .php7 .pl .fpl .wml .jsp
+    ForceType application/octet-stream
+    Header set Content-Disposition attachment
+</Files>
+
+<IfModule mod_php5.c>
+    php_value engine off
+</IfModule>
+<IfModule mod_php4.c>
+    php_value engine off
+</IfModule>
